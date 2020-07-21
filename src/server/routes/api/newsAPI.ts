@@ -19,10 +19,10 @@ router.get('/', async(req, res, next) => {
 })
 
 router.get('/:search', async(req, res, next) => {
-    const {search} = {...req.params}
+    const {search} = req.params
+    console.log(search)
     const date = (year + "-" + month + "-" + day);
     const articles = await fetch(`https://newsapi.org/v2/everything?q=${search}&from=${date}&language=en&sortBy=publishedAt&apiKey=${NewsAPIkey}`)
-    console.log(articles)
     const data = await articles.json()
     res.json(data)
 })
