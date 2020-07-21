@@ -36,23 +36,7 @@ const WSJ: React.FC<IWSJProps> = () => {
         <>
             <Navbar />
             <div className="container">
-            <h1>WSJ</h1>
-                {/* <div className="input-group mb-3 mt-5">
-                    <input
-                        className="form-control"
-                        placeholder="Search"
-                        aria-describedby="button-addon2"
-                        value={keyword}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setKeyword(e.target.value)} />
-                    <div className="input-group-append">
-                        <button
-                            className="btn btn-outline-secondary"
-                            type="button"
-                            onClick={getSearch}
-                            id="button-addon2">Search</button>
-                    </div>
-                </div> */}
-                
+            <h1 className="mt-5 text-center border border-left-0 border-right-0 page-title">Wall Street Journal</h1>
                 <div className="row justify-content-center">
                     {articles.map(article => (
                         <ArticleCard key={Math.random()} article={article} />

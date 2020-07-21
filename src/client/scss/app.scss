@@ -2,4 +2,32 @@ $theme-colors: (
     'primary': #0091ea //Covalence Blue!  :D
 );
 
+.body{
+    font-family: 'Kazimir', serif;
+    font-size: 14px;
+    color: #2f2f2f;
+    background-color: #f9f7f1;
+}
+.article-card {
+    background-color: #f9f7f1 !important;
+}
+
+.media {
+    -webkit-filter: sepia(80%) contrast(1) opacity(0.8);
+    filter: sepia(80%) grayscale(1) contrast(1) opacity(0.8);
+    mix-blend-mode: multiply;
+    width: 100%;
+}
+
+.nav {
+    font-style: italic;
+    font-family: 'Kazimir', serif;
+    color: black
+}
+
+.page-title {
+    font-size: 50px;
+    font-family: 'Kazimir', serif;
+}
+
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';

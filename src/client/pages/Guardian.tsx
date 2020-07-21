@@ -8,7 +8,8 @@ const Guardian: React.FC<IGuardianProps> = () => {
         <>
             <Navbar />
             <div className="container">
-                <h1>Guardian</h1>
+            <h1 className="mt-5 text-center border border-left-0 border-right-0 page-title">Guardian</h1>
+
             </div>
         </>
     )

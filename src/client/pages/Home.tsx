@@ -37,17 +37,17 @@ const Home: React.FC<IHomeProps> = () => {
         <>
             <Navbar />
             <main className="container">
+                <h1 className="mt-5 text-center border border-left-0 border-right-0 page-title">Home</h1>
                 <section className="row justify-content-center mt-5">
                     <div className="col-md-6">
-                        <h1 className="display-4 text-center">HOME</h1>
-                        <form className="form-group border rounded-lg p-3">
+                        <form className="form-group border rounded-lg p-3 shadow">
                             <div className="row">
                                 <div className="col">
                                     <label htmlFor="username">Username</label>
                                     <input
                                         value={username}
                                         onChange={e => setUsername(e.target.value)}
-                                        placeholder="Some name"
+                                        placeholder="Enter Your Name"
                                         type="text"
                                         className="form-control"
                                         id="username"

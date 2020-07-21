@@ -35,7 +35,7 @@ const NewsAPI: React.FC<INewsAPIProps> = () => {
         <>
             <Navbar />
             <div className="container">
-            <h1>News API</h1>
+            <h1 className="mt-5 text-center border border-left-0 border-right-0 page-title">News API</h1>
                 <div className="input-group mb-3 mt-5">
                     <input
                         className="form-control"
