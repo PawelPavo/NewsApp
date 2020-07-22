@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Navbar from '../components/NavBar'
-import { useState, useRef } from 'react';
+import { useState } from 'react';
+
 
 
 const Guardian: React.FC<IGuardianProps> = () => {
@@ -1145,39 +1146,50 @@ const Guardian: React.FC<IGuardianProps> = () => {
     }
 
 
+    // refresh the whole page
     const restartClick = () => {
         window.location.reload();
     }
+
+    //modali for game rules
+    
 
 
     return (
         <>
             <Navbar />
             <div className="container">
-                <h3 className="my-3 text-center border border-left-0 border-right-0 page-title">The Pathfinder</h3>
+                <h4 className="my-3 text-center border border-left-0 border-right-0 page-title text-monospace">The Pathfinder</h4>
+
                 <div className="row text-center">
-                    <div className="col-md-6">
+                <div className="col-md-4">
                         <button
                             onClick={restartClick}
-                            className="btn btn-outline-secondary">RESTART GAME</button>
+                            className="btn btn-outline-secondary">GAME RULES</button>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-4">
+                        <button
+                            onClick={restartClick}
+                            className="btn btn-outline-warning">RESTART GAME</button>
+                    </div>
+
+                    <div className="col-md-4">
                         <button
                             onClick={null}
-                            className="btn btn-outline-secondary">SAVE RESULTS</button>
+                            className="btn btn-outline-info">SAVE RESULTS</button>
                     </div>
                 </div>
 
-                <div className="row content-justify-center mt-3">
+                <div className="game-row row content-justify-center mt-3">
                     <div className="wrapper">
                         <div className="top">
-                            <div className="row d-flex justify-content-around">
+                            <div className="row d-flex justify-content-around border rounded-pill shadow-sm p-3">
                                 <h4
-                                    className="text-primary">
+                                    className="text-primary text-monospace my-auto">
                                     Total Guesses: {totalClicks}
                                 </h4>
                                 <h4
-                                    className="text-danger">
+                                    className="text-danger text-monospace my-auto">
                                     Wrong Guesses: {wrong}
                                 </h4>
                             </div>
