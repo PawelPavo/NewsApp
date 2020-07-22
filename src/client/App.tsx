@@ -4,7 +4,7 @@ import NewsAPI from './pages/NewsAPI';
 import Home from './pages/Home';
 import NYTimes from './pages/NYTimes'
 import GoogleNews from './pages/GoogleNews';
-import Guardian from './pages/Guardian';
+import ThePathfinder from './pages/ThePathfinder';
 import WSJ from './pages/WSJ';
 
 
@@ -22,8 +22,8 @@ const App: React.FC<IAppProps> = () => {
 				<Route exact path='/nytimes'>
 					<NYTimes />
 				</Route>
-				<Route exact path='/guardian'>
-					<Guardian />
+				<Route exact path='/pathfinder'>
+					<ThePathfinder />
 				</Route>
 				<Route exact path='/google'>
 					<GoogleNews />

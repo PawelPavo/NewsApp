@@ -12,7 +12,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
                         <NavLink className="text-secondary" exact to="/" activeClassName="text-warning"> Home </NavLink>
                         <NavLink className="text-secondary" exact to="/news" activeClassName="text-warning"> News API  </NavLink>
                         <NavLink className="text-secondary" exact to="/nytimes" activeClassName="text-warning"> NY Times </NavLink>
-                        <NavLink className="text-secondary" exact to="/guardian" activeClassName="text-warning"> Guardian </NavLink>
+                        <NavLink className="text-secondary" exact to="/pathfinder" activeClassName="text-warning"> The Pathfinder </NavLink>
                         <NavLink className="text-secondary" exact to="/google" activeClassName="text-warning"> Google News </NavLink>
                         <NavLink className="text-secondary" exact to="/wsj" activeClassName="text-warning">  Wall Street Journal  </NavLink>
                     </nav>
