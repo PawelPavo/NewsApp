@@ -1,10 +1,11 @@
 import * as React from 'react';
 import Navbar from '../components/NavBar'
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 
 
-const Guardian: React.FC<IGuardianProps> = () => {
+const ThePathfinder: React.FC<IThePathfinderProps> = () => {
     //counters
     const [wrong, setWrong] = useState(0)
     const [totalClicks, setTotalCliks] = useState(0)
@@ -1152,7 +1153,7 @@ const Guardian: React.FC<IGuardianProps> = () => {
     }
 
     //modali for game rules
-    
+
 
 
     return (
@@ -1162,10 +1163,10 @@ const Guardian: React.FC<IGuardianProps> = () => {
                 <h4 className="my-3 text-center border border-left-0 border-right-0 page-title text-monospace">The Pathfinder</h4>
 
                 <div className="row text-center">
-                <div className="col-md-4">
-                        <button
-                            onClick={restartClick}
-                            className="btn btn-outline-secondary">GAME RULES</button>
+                    <div className="col-md-4">
+                        <Link to="/game-rules"><button
+                            className="btn btn-outline-secondary">
+                            GAME RULES</button></Link>
                     </div>
                     <div className="col-md-4">
                         <button
@@ -1480,6 +1481,6 @@ const Guardian: React.FC<IGuardianProps> = () => {
     )
 }
 
-export interface IGuardianProps { };
+export interface IThePathfinderProps { };
 
-export default Guardian;
+export default ThePathfinder;

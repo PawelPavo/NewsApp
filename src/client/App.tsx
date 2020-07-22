@@ -6,6 +6,7 @@ import NYTimes from './pages/NYTimes'
 import GoogleNews from './pages/GoogleNews';
 import ThePathfinder from './pages/ThePathfinder';
 import WSJ from './pages/WSJ';
+import GameRules from './pages/GameRules';
 
 
 const App: React.FC<IAppProps> = () => {
@@ -30,6 +31,9 @@ const App: React.FC<IAppProps> = () => {
 				</Route>
 				<Route exact path='/wsj'>
 					<WSJ />
+				</Route>
+				<Route exact path='/game-rules'>
+					<GameRules />
 				</Route>
 			</Switch>
 		</BrowserRouter>
