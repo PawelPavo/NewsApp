@@ -604,7 +604,7 @@ const Guardian: React.FC<IGuardianProps> = () => {
         setColor61('')
     }
     const wrongClick31 = () => {
-        setTotalCliks(totalClicks + 1)        
+        setTotalCliks(totalClicks + 1)
         setWrong(wrong + 1)
         setWrongColor31('red')
         setTimeout(function () {
@@ -1037,7 +1037,7 @@ const Guardian: React.FC<IGuardianProps> = () => {
     }
     const wrongClick58 = () => {
 
-        setTotalCliks(totalClicks + 1)        
+        setTotalCliks(totalClicks + 1)
         setWrong(wrong + 1)
         setWrongColor58('red')
         setTimeout(function () {
@@ -1070,7 +1070,7 @@ const Guardian: React.FC<IGuardianProps> = () => {
     }
     const wrongClick60 = () => {
 
-        setTotalCliks(totalClicks + 1)        
+        setTotalCliks(totalClicks + 1)
         setWrong(wrong + 1)
         setWrongColor60('red')
         setTimeout(function () {
@@ -1087,7 +1087,7 @@ const Guardian: React.FC<IGuardianProps> = () => {
     }
     const wrongClick61 = () => {
 
-        setTotalCliks(totalClicks + 1)        
+        setTotalCliks(totalClicks + 1)
         setWrong(wrong + 1)
         setWrongColor61('red')
         setTimeout(function () {
@@ -1104,7 +1104,7 @@ const Guardian: React.FC<IGuardianProps> = () => {
     }
     const wrongClick62 = () => {
 
-        setTotalCliks(totalClicks + 1)        
+        setTotalCliks(totalClicks + 1)
         setWrong(wrong + 1)
         setWrongColor62('red')
         setTimeout(function () {
@@ -1121,7 +1121,7 @@ const Guardian: React.FC<IGuardianProps> = () => {
     }
     const wrongClick63 = () => {
 
-        setTotalCliks(totalClicks + 1)        
+        setTotalCliks(totalClicks + 1)
         setWrong(wrong + 1)
         setWrongColor63('red')
         setTimeout(function () {
@@ -1143,29 +1143,44 @@ const Guardian: React.FC<IGuardianProps> = () => {
             setWrongColor64('')
         }, 100);
     }
+
+
+    const restartClick = () => {
+        window.location.reload();
+    }
+
+
     return (
         <>
             <Navbar />
             <div className="container">
-                <h1 className="mt-5 text-center border border-left-0 border-right-0 page-title">The Pathfinder</h1>
-                <div className="row d-flex justify-content-around" >
-                    <div className="col-6 text-center">
-                        <div
-                            className="display-4 text-primary">
-                            Total Guesses: {totalClicks}
-                        </div>
+                <h3 className="my-3 text-center border border-left-0 border-right-0 page-title">The Pathfinder</h3>
+                <div className="row text-center">
+                    <div className="col-md-6">
+                        <button
+                            onClick={restartClick}
+                            className="btn btn-outline-secondary">RESTART GAME</button>
                     </div>
-                    <div className="col-6 text-center ">
-                        <div
-                            style={{ color: 'red' }}
-                            className="display-4">
-                            Wrong: {wrong}
-                        </div>
+                    <div className="col-md-6">
+                        <button
+                            onClick={null}
+                            className="btn btn-outline-secondary">SAVE RESULTS</button>
                     </div>
                 </div>
-                <div className="row content-justify-center">
+
+                <div className="row content-justify-center mt-3">
                     <div className="wrapper">
                         <div className="top">
+                            <div className="row d-flex justify-content-around">
+                                <h4
+                                    className="text-primary">
+                                    Total Guesses: {totalClicks}
+                                </h4>
+                                <h4
+                                    className="text-danger">
+                                    Wrong Guesses: {wrong}
+                                </h4>
+                            </div>
                             <div className="wrapper-inner">
                                 <div className="box-inner"></div>
                                 <div className="box-inner"></div>
