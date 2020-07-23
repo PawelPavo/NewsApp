@@ -63,6 +63,7 @@ $theme-colors: (
   .bottom{
     display: grid;
     align-items: stretch;
+    
   }
   .top {
     grid-column-start: 1;
@@ -70,6 +71,9 @@ $theme-colors: (
     grid-row-start: 1;
     grid-row-end: 1;
     margin-top: -30px;
+    -webkit-box-shadow: inset 1px 1px 5px #333;
+    -moz-box-shadow:    inset 1px 1px 5px #333;
+    box-shadow:         inset 1px 1px 5px #333;
   }
   .bottom {
     grid-column-start: 1;

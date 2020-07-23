@@ -1234,7 +1234,7 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
                 <div className="game-row row content-justify-center mt-3">
                     <div className="wrapper">
                         <div className="top">
-                            <div className="row d-flex justify-content-around border rounded-pill shadow-sm p-3 shadow">
+                            <div className="row d-flex justify-content-around pt-4">
                                 <h4
                                     className="text-primary text-monospace my-auto">
                                     Total Guesses: {totalClicks}
