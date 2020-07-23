@@ -26,14 +26,14 @@ const GameRules: React.FC<IGameRulesProps> = () => {
                         <h5 className="mb-5">The rules:</h5>
                         <p className="text-left">To start the game, find a ( &uarr; ) which marks the first correct square.</p>
                         <p className="text-left">Each correct square is touching one another either by a corner or a side - forming a path.</p>
-                        <p className="text-left">Now, you must keep guessing the path to the top by correctly guessing the next square in the row above.</p>
+                        <p className="text-left">Now, you must find the path to the top by correctly guessing the next square in the row above.</p>
                         <p className="text-left">The correct squares will change color to <span className="text-success">GREEN</span>, while incorrect squares will flash <span className="text-danger">RED</span>.</p>
                         <p className="text-left">... one more thing</p>
-                        <p className="text-left">Every time you click the incorrect square, the path will rest so I hope you are lucky and have a great memory.</p>
-                        <p className="text-left">Enoy and let luck be on youe side!</p>
+                        <p className="text-left">Every time you click the incorrect square, the path will reset, so I hope you are lucky and have outstanding memory.</p>
 
                     </div>
                 </div>
+                <h5 className="mt-5 text-center border border-left-0 border-right-0 text-monospace">Enjoy and may luck be ever in your favor!</h5>
             </div>
         </>
     )
