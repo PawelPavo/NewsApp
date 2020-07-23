@@ -1,3 +1,4 @@
+//@ts-nocheck
 import * as React from 'react';
 import Navbar from '../components/NavBar'
 import { Link } from 'react-router-dom';
@@ -10,11 +11,12 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
     //counters
     const [wrong, setWrong] = useState(0)
     const [totalClicks, setTotalCliks] = useState(0)
+    const [helpCount, setHelpCount] = useState(0)
 
-    // diable button afeter click
-    const [disabled, setDisabled] = useState(false)
 
-    //correct color change after click for each cell
+// ============== STATE OF COLORS ===================
+
+    //correct color state for correct cells
     const [color4, setColor4] = useState('')
     const [color12, setColor12] = useState('')
     const [color21, setColor21] = useState('')
@@ -24,7 +26,7 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
     const [color52, setColor52] = useState('')
     const [color61, setColor61] = useState('')
 
-    //wrong color click for each cell
+    //wrong color state for ALL cells - correct and wrong
     const [wrongColor1, setWrongColor1] = useState('')
     const [wrongColor2, setWrongColor2] = useState('')
     const [wrongColor3, setWrongColor3] = useState('')
@@ -90,10 +92,9 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
     const [wrongColor63, setWrongColor63] = useState('')
     const [wrongColor64, setWrongColor64] = useState('')
 
-    //end game alert
+   // =========== CLICKS =============
 
-
-    //correct clicks
+    // winning click
     const correctClick4 = () => {
         setColor4('green')
         setTotalCliks(totalClicks + 1)
@@ -119,6 +120,8 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
             })
         }
     }
+    
+    //correct clicks
     const correctClick12 = () => {
         setColor12('green')
         setTotalCliks(totalClicks + 1)
@@ -1146,7 +1149,6 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
         setColor61('')
     }
     const wrongClick63 = () => {
-
         setTotalCliks(totalClicks + 1)
         setWrong(wrong + 1)
         setWrongColor63('red')
@@ -1168,8 +1170,17 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
         setTimeout(function () {
             setWrongColor64('')
         }, 100);
+        setColor4('')
+        setColor12('')
+        setColor21('')
+        setColor29('')
+        setColor36('')
+        setColor43('')
+        setColor52('')
+        setColor61('')
     }
 
+    // ============ GAME  HELPERS AND CONTROLS =============
 
     // refresh the whole page
     const restartClick = () => {
@@ -1177,9 +1188,8 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
     }
 
     //helper click flashes the path
-    const [help, setHelp] = useState(0)
     const helperClick = () => {
-        setHelp(help + 1)
+        setHelpCount(helpCount + 1)
         setColor4('green')
         setColor12('green')
         setColor21('green')
@@ -1201,6 +1211,7 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
     }
 
 
+    // ================== THE GAME ================
 
     return (
         <>
@@ -1218,7 +1229,6 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
                             onClick={restartClick}
                             className="btn btn-outline-warning">RESTART GAME</button>
                     </div>
-
                     <div className="col-4">
                         <button
                             onClick={null}
@@ -1228,7 +1238,7 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
                 <div className="row my-3 justify-content-center">
                     <button
                         onClick={helperClick}
-                        className="btn btn-lg btn-primary rounded-pill shadow">HELP ME! <span className="badge badge-light"> {help}</span>
+                        className="btn btn-lg btn-primary rounded-pill shadow">HELP ME! <span className="badge badge-light"> {helpCount}</span>
                     </button>
                 </div>
                 <div className="game-row row content-justify-center mt-3">
@@ -1243,7 +1253,6 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
                                     className="text-danger text-monospace my-auto">
                                     Wrong Guesses: {wrong}
                                 </h4>
-
                             </div>
                             <div className="wrapper-inner">
                                 <div className="box-inner"></div>
@@ -1256,7 +1265,6 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
                                 <div className="box-inner"></div>
                             </div>
                         </div>
-
                         <button
                             style={{ backgroundColor: wrongColor1 }}
                             onClick={wrongClick1}
@@ -1302,7 +1310,6 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
                             onClick={wrongClick11}
                             className="box btn btn-primary"></button>
                         <button
-                            disabled={disabled}
                             style={{ backgroundColor: color12 }}
                             onClick={correctClick12}
                             className="box btn btn-primary"></button>
