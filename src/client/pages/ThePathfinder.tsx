@@ -1152,7 +1152,29 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
         window.location.reload();
     }
 
-    //modali for game rules
+    //helper click flashes the path
+    const [help, setHelp] = useState(0)
+    const helperClick = () => {
+        setHelp(help + 1)
+        setColor4('green')
+        setColor12('green')
+        setColor21('green')
+        setColor29('green')
+        setColor36('green')
+        setColor43('green')
+        setColor52('green')
+        setColor61('green')
+        setTimeout(function () {
+            setColor4('')
+            setColor12('')
+            setColor21('')
+            setColor29('')
+            setColor36('')
+            setColor43('')
+            setColor52('')
+            setColor61('')
+        }, 75);
+    }
 
 
 
@@ -1161,7 +1183,6 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
             <Navbar />
             <div className="container">
                 <h4 className="my-3 text-center border border-left-0 border-right-0 page-title text-monospace">The Pathfinder</h4>
-
                 <div className="row text-center">
                     <div className="col-md-4">
                         <Link to="/game-rules"><button
@@ -1180,7 +1201,12 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
                             className="btn btn-outline-info">SAVE RESULTS</button>
                     </div>
                 </div>
-
+                <div className="row my-3 justify-content-center">
+                    <button
+                        onClick={helperClick}
+                        className="btn btn-lg btn-primary rounded-pill">HELP ME! <span className="badge badge-light"> {help}</span>
+                    </button>
+                </div>
                 <div className="game-row row content-justify-center mt-3">
                     <div className="wrapper">
                         <div className="top">
@@ -1193,6 +1219,7 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
                                     className="text-danger text-monospace my-auto">
                                     Wrong Guesses: {wrong}
                                 </h4>
+
                             </div>
                             <div className="wrapper-inner">
                                 <div className="box-inner"></div>
@@ -1205,6 +1232,7 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
                                 <div className="box-inner"></div>
                             </div>
                         </div>
+
                         <button
                             style={{ backgroundColor: wrongColor1 }}
                             onClick={wrongClick1}
