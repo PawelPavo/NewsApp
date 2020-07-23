@@ -11,7 +11,7 @@ const GameRules: React.FC<IGameRulesProps> = () => {
                 <h1 className="mt-5 text-center border border-left-0 border-right-0 page-title text-monospace">The Pathfinder Game Rules</h1>
                 <div className="row text-monospace d-flex justify-content-center mt-5">
                     <div className="col">
-                        <Link to="/pathfinder">
+                        <Link to="/pathfinder" style={{ textDecoration: 'none' }}>
                             <button className="btn btn-outline-secondary btn-block w-50 mx-auto">BACK TO GAME</button>
                         </Link>
                     </div>

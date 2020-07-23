@@ -2,6 +2,7 @@ import * as React from 'react';
 import Navbar from '../components/NavBar'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import Swal from 'sweetalert2'
 
 
 
@@ -89,11 +90,34 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
     const [wrongColor63, setWrongColor63] = useState('')
     const [wrongColor64, setWrongColor64] = useState('')
 
+    //end game alert
+
 
     //correct clicks
     const correctClick4 = () => {
         setColor4('green')
         setTotalCliks(totalClicks + 1)
+        if (color4 === '' &&
+            color12 === 'green' &&
+            color21 === 'green' &&
+            color29 === 'green' &&
+            color36 === 'green' &&
+            color43 === 'green' &&
+            color52 === 'green' &&
+            color61 === 'green') {
+            Swal.fire({
+                title: 'SO LUCKY!',
+                text: 'You found the path...',
+                imageUrl: 'https://news-api.s3.us-east-2.amazonaws.com/1595527001268.jpg',
+                imageWidth: 300,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+                timer: 5000,
+                onClose: () => {
+                    restartClick()
+                }
+            })
+        }
     }
     const correctClick12 = () => {
         setColor12('green')
@@ -1182,20 +1206,20 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
         <>
             <Navbar />
             <div className="container">
-                <h4 className="my-3 text-center border border-left-0 border-right-0 page-title text-monospace">The Pathfinder</h4>
-                <div className="row text-center">
-                    <div className="col-md-4">
+                <h4 className="mt-3 text-center border border-left-0 border-right-0 page-title text-monospace">The Pathfinder</h4>
+                <div className="row text-center p-3 shadow-sm">
+                    <div className="col-4">
                         <Link to="/game-rules"><button
                             className="btn btn-outline-secondary">
                             GAME RULES</button></Link>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-4">
                         <button
                             onClick={restartClick}
                             className="btn btn-outline-warning">RESTART GAME</button>
                     </div>
 
-                    <div className="col-md-4">
+                    <div className="col-4">
                         <button
                             onClick={null}
                             className="btn btn-outline-info">SAVE RESULTS</button>
@@ -1204,13 +1228,13 @@ const ThePathfinder: React.FC<IThePathfinderProps> = () => {
                 <div className="row my-3 justify-content-center">
                     <button
                         onClick={helperClick}
-                        className="btn btn-lg btn-primary rounded-pill">HELP ME! <span className="badge badge-light"> {help}</span>
+                        className="btn btn-lg btn-primary rounded-pill shadow">HELP ME! <span className="badge badge-light"> {help}</span>
                     </button>
                 </div>
                 <div className="game-row row content-justify-center mt-3">
                     <div className="wrapper">
                         <div className="top">
-                            <div className="row d-flex justify-content-around border rounded-pill shadow-sm p-3">
+                            <div className="row d-flex justify-content-around border rounded-pill shadow-sm p-3 shadow">
                                 <h4
                                     className="text-primary text-monospace my-auto">
                                     Total Guesses: {totalClicks}

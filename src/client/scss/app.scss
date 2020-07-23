@@ -51,6 +51,9 @@ $theme-colors: (
     padding: 20px;
     text-align: center;
     margin: 1px;
+    -webkit-box-shadow: inset 1px 1px 5px #333;
+    -moz-box-shadow:    inset 1px 1px 5px #333;
+    box-shadow:         inset 1px 1px 5px #333;
   }
   .box-inner{
     text-align: center;
